@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/link.css">
+  <title>Lemur's Corner!</title>
+</head>
+<body class="layout_compact">
+  <div class="page_wrapper">
+    <header class="site_header">
+      <h1>Lemur's Corner<span class="blink">_</span></h1>
+    </header>
+
+    <div class="banner">✦ WEBSITE UNDER CONSTRUCTION — THINGS WILL CHANGE ✦</div>
+
+    <div class="body_row">
+
+      <aside class="side_bar">
+        <div class="box">
+          <div class="imgbox">
+            <img src='https://tse4.mm.bing.net/th/id/OIP.eT-12ILCJSVQ9aWilq-y6gHaE8?pid=Api'
+                 alt="Cute lemur image (placeholder)">
+          </div>
+        </div>
+        <div class="box">
+          <div class="box_header">Navigate</div>
+          <div style="padding: 4px 0;">
+            <a class="nav_link" href="https://the-lemur.me/">Home</a>
+            <a class="nav_link" href="https://the-lemur.me/links">Cool sites</a>
+            <a class="nav_link" href="https://the-lemur.atabook.org/">Guestbook</a>
+            <a class="nav_link_work_in_progress" href="#">Work in progress</a>
+            <a class="nav_link_work_in_progress" href="#">Work in progress</a>
+          </div>
+          <button id="layout_toggle" onclick="toggleLayout()">⇄ Switch to Wide Layout</button>
+        </div>
+      </aside>
+
+      <div class="content_area">
+        <div class="box span_full">
+          <div class="page_header">
+            <h1>Hyperlink Directory</h1>
+          </div>
+          <div class="box_body">
+            <p>This page is for linking my Neighbours and websites I find interesting! This page currently is not complete, as I am still searching for websites to link here. If you have any recommendations feel free to send it to me!</p>
+            <p><span class="info">questions / suggestions →</span><span class="legend_highlight"> thelemur.switch679@passinbox.com</span></p>
+          </div>
+        </div>
+        <div class="left_grid">
+          <div class="box span_two">
+            <div class="box_header">My button</div>
+            <div class="box_body">
+              <center>
+                <div class="buttons">
+                  <a href="https://the-lemur.neocities.org" title="Visit my Corner of the internet!"><img src="../thebutton.gif" alt="My corner of the internet!" width="88" height="31"></a>
+                </div>
+                <div>
+                  <textarea rows="6" cols="30" font-size="5px" readonly=""><a href="https://the-lemur.neocities.org" title="Visit my Corner of the internet!"><img src="../thebutton.gif" alt="My corner of the internet!" width="88" height="31"></a></textarea>
+                </div>
+              </center>
+            </div>
+          </div>
+          <div class="box span_two">
+            <div class="box_header">Cool links</div>
+            <div class="box_body">
+             <p>No links yet, sorry</p>
+            </div>
+          </div>
+        </div>
+      <div class="right_grid"> 
+        <div class="box">
+          <div class="box_header">Neighbours</div>
+          <div class="button_box">
+            <div class="buttons"><a href="https://poesisincarnatus.neocities.org"><img src="https://poesisincarnatus.neocities.org/images/button-2.gif" alt="whoopsie!! website button not loading &gt;,&lt;" width="88" height="31"></div></a>
+            <div class="buttons"><a href="https://onio.neocities.org" title="Visit Onio Café"><img src="https://onio.neocities.org/thebutton.gif" alt="Come Chat With Us!" width="88" height="31"></a></div>
+            <div class="buttons"><a href="https://protonaurum.neocities.org" title="gigadude's Button!" target="_blank"><img src="https://protonaurum.neocities.org/assets/images/buttons/weevbig.png" width="88" height="31"></a></div>
+            <div class="buttons"><a href="https://teavee.neocities.org" title="TeaVee's Button!" target="_blank"><img src="https://teavee.neocities.org/buttoner.gif" width="88" height="31"></a></div>
+            <div class="buttons"><a href="https://pocketnotebook.neocities.org" target="_blank" rel="noopener"><img src="https://pocketnotebook.neocities.org/images/pocket notebook button.png" alt="Pocket Notebook" width="88" height="31"></a></div>
+            <div class="buttons"><a title="olorollo" href="https://olorollo.neocities.org/" target="_blank"><img src="https://olorollo.neocities.org/img/olorollo.png" width="88" height="31"></a></div>
+            <div class="buttons"><a href="https://digitdude.neocities.org" title="print the world"><img src="https://digitdude.neocities.org/digitdude.gif" alt="digitdude" width="88" height="31"></a></div>
+            <div class="buttons"><a href="https://drinkmoretea.neocities.org" target="_blank"><img src="https://drinkmoretea.neocities.org/images/drinkmoreteasitebutt.png" alt="drinkmoretea site button" title="drinkmoretea" width="88" height="31"></a></div>
+            <p><span class="info">If you added my button feel free to contact me to get a space here→</span><span class="legend_highlight"> thelemur.switch679@passinbox.com</span></p>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return decodeURIComponent(parts.pop().split(';').shift());
+    }
+
+    function setCookie(name, value, days) {
+      const expires = new Date(Date.now() + days * 864e5).toUTCString();
+      document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`;
+    }
+
+    function applyLayout(layout) {
+      document.body.classList.remove('layout_compact', 'layout_wide');
+      document.body.classList.add('layout_' + layout);
+      const btn = document.getElementById('layout_toggle');
+      btn.textContent = layout === 'wide' ? '⇄ Switch to Compact Layout' : '⇄ Switch to Wide Layout';
+    }
+
+    function toggleLayout() {
+      const current = document.body.classList.contains('layout_wide') ? 'wide' : 'compact';
+      const next = current === 'wide' ? 'compact' : 'wide';
+      setCookie('layout_pref', next, 365);
+      applyLayout(next);
+    }
+
+    (function init() {
+      document.cookie = "layout=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      const params = new URLSearchParams(window.location.search);
+      const urlLayout = params.get('layout');
+      const cookieLayout = getCookie('layout_pref');
+      const layout = urlLayout || cookieLayout || 'compact';
+      if (urlLayout) setCookie('layout_pref', urlLayout, 365);
+      applyLayout(layout);
+    })();
+  </script>
+</body>
+</html>
