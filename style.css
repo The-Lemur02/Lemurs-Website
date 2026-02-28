@@ -316,9 +316,9 @@ body.layout_wide .left_grid .box .box_body > p:has(.small_legend) {
   body { padding: 8px; }
   .body_row { flex-direction: column; }
   .side_bar { width: 100%; }
-  body.layout-compact .content_area,
-  body.layout-wide .content_area { grid-template-columns: 1fr; }
-  body.layout-compact .span_full,
-  body.layout-wide .span_full { grid-column: 1; }
-  body.layout-compact .center_grid { display: flex; flex-direction: column; gap: 0.75rem; }
+  body.layout_compact .content_area,
+  body.layout_wide .content_area { grid-template-columns: 1fr; }
+  body.layout_compact .span_full,
+  body.layout_wide .span_full { grid-column: 1; }
+  body.layout_compact .center_grid { display: flex; flex-direction: column; gap: 0.75rem; }
 }
