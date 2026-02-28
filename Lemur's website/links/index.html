@@ -100,6 +100,7 @@
     }
 
     function applyLayout(layout) {
+      if (window.innerWidth <= 700) layout = 'wide';
       document.body.classList.remove('layout_compact', 'layout_wide');
       document.body.classList.add('layout_' + layout);
       const btn = document.getElementById('layout_toggle');
