@@ -14,7 +14,7 @@ body {
   background-repeat: repeat;
   font-family: Verdana, sans-serif;
   font-size: 1rem;
-  line-height: 2;
+  line-height: 2rem;
   padding: 2rem;
 }
 
@@ -42,7 +42,6 @@ aside a:hover {
 .small_legend { 
   font-size: 0.75rem; 
   color: #C8BC5A; 
-  margin-top: 0.4rem; 
 }
 .info { 
   font-size: 0.75rem; 
@@ -89,6 +88,26 @@ textarea{
   margin: 0.3rem 0; 
   color: #FAF6DC; 
   font-size: 15.5px; 
+}
+.box_about_me { 
+  padding: 0.6rem 0.75rem; 
+  color: #FAF6DC; 
+}
+.box_about_me p { 
+  margin: 0.3rem 0; 
+  color: #FAF6DC; 
+  font-size: 15.5px; 
+  margin-bottom: 1.1rem;
+}
+.box_about_me .small_legend { 
+  font-size: 0.75rem; 
+  color: #C8BC5A; 
+}
+.box_about_me:has(.small_legend){
+  padding-bottom: 0;
+}
+.box_body p:has(.small_legend){
+  padding: 0;
 }
 .box_header {
   background: #2B2F00;
@@ -169,25 +188,15 @@ textarea{
   margin: auto;
   justify-content: flex-start;
 }
-.empty_button{
-  flex: 1;
-  flex-direction: row;
-  align-items: flex-end;
-}
-
-.button_box:last-child{
-  margin: 0;
-}
-
-.button_box {
-  display: flex;
-  flex-direction: column;
+.my_button {
+  margin: 0.75rem;
   justify-content: flex-start;
 }
 
 .button_wrap {
-  display: flex;
-  flex-wrap: wrap;
+  margin: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
 }
 
 .nav_link {
