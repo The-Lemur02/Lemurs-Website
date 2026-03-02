@@ -14,6 +14,9 @@
         <header class="site_header">
             <h1>Lemur's Corner<span class="blink">_</span></h1>
         </header>
+        
+        <div class="banner">✦ WEBSITE UNDER CONSTRUCTION — THINGS WILL CHANGE ✦</div>
+        
         <div class="body_row">
             <aside class="side_bar">
                 <div class="box">
@@ -89,6 +92,11 @@
       if (urlLayout) setCookie('layout_pref', urlLayout, 365);
       applyLayout(layout);
     })();
+
+    const iframe = document.querySelector('iframe');
+    iframe.addEventListener('load', function() {
+        window.scrollTo(window.scrollX, window.scrollY);
+    });
   </script>
 </body>
 
