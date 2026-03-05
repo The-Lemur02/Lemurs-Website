@@ -23,6 +23,11 @@ a {
   color: #C8A800; 
   text-decoration: underline; 
 }
+hr {
+  color: #D4C96A;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
 a:hover { 
   color: #FF9B3A; 
 }

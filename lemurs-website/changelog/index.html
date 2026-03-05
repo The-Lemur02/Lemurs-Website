@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css?v=1">
+    <title>Lemur's Corner!</title>
+</head>
+<body class="layout_compact">
+    <div class="page_wrapper">
+        <header class="site_header">
+            <h1>Lemur's Corner<span class="blink">_</span></h1>
+        </header>
+
+        <div class="banner">✦ WEBSITE UNDER CONSTRUCTION — THINGS WILL CHANGE ✦</div>
+
+        <div class="body_row">
+            <aside class="side_bar">
+                <div class="box">
+                    <div class="imgbox">
+                        <img src='https://tse4.mm.bing.net/th/id/OIP.eT-12ILCJSVQ9aWilq-y6gHaE8?pid=Api'
+                            alt="Cute lemur image (placeholder)">
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box_header">Navigate</div>
+                    <div style="padding: 4px 0;">
+                        <a class="nav_link" href="https://the-lemur.me/">Home</a>
+                        <a class="nav_link" href="https://the-lemur.me/about me">About Me</a>
+                        <a class="nav_link" href="https://the-lemur.me/links">Links</a>
+                        <a class="nav_link" href="https://the-lemur.me/changelog">Changelog</a>
+                        <a class="nav_link" href="https://the-lemur.me/chat">Chat</a>
+                        <a class="nav_link" href="https://the-lemur.atabook.org/">Guestbook</a>
+                        <a class="nav_link_work_in_progress" href="#">Work in progress</a>
+                    </div>
+                    <button id="layout_toggle" onclick="toggleLayout()">⇄ Switch to Wide Layout</button>
+                </div>
+                </aside>
+                <div class="content_area">
+                    <div class="box span_full">
+                        <div class="page_header">
+                            <h1>Changelog</h1>
+                        </div>
+                        <div class="box_body">
+                            <p><span class="highlight">04-03-2026:</span> Changelog page added → This page was FINALLY added for me to both rant about problems I'm having with making this website and to show my journey, there are some days missing in the start since I wasn't cataloging my progress then but after that most things that I change on this website will be listed here. Routine updates will not be listed here, like changing the This week or Notes</p>
+                            <hr>
+                            <p><span class="highlight">02-03-2026:</span> Chat page added → Finally got chat working, I was trying a method most of the day that in the end did not work out. I found another way fortunately so it's up now</p>
+                            <hr>
+                            <p><span class="highlight">01-03-2026:</span> About Me page added → About me page was finally created, not totally satisfied with it and currently looking in to ways to make it better. Not currently a priority seeing as it works perfectly fine for now.</p>
+                            <hr>
+                            <p><span class="highlight">28-02-2026:</span> Possible mobile fix sent → Possible mobile fix was sent. Fixes most pages but the links page is still broken, working on a fix but not my priority. The fix will probably be rolled out only after all pages are finished.</p>
+                            <hr>
+                            <p><span class="highlight">28-02-2026:</span> Links page added → Links page with resources and buttons finally added. The neighbours section took a bit to get working as intended. I wanted the margins to resize acording to screen size and this took quite a but seeing as I was using flexbox.</p>
+                            <hr>
+                            <p><span class="highlight">28-02-2026:</span> Button created and added → Finally got around to creating my own button. It took so long mostly because of procrastination.</p>
+                            <hr>
+                            <p><span class="highlight">26-02-2026:</span> Layout choosing page → Added the neocities redirect page where you choose your layout. I do not understand most of the javascript being used here, need to study it more.</p>
+                            <hr>
+                            <p><span class="highlight">26-02-2026:</span> Layout toggle → After indecision on what layout should be used I decided on a toggle. Took way too long to actually get it implemented as I knew no javascript at the time and at the time of writing don't know that much more. </p>
+                            <hr>
+                            <p><span class="highlight">25-02-2026:</span> Updated Webpage Layout → The new layout was finally decided and put into action. The side bar was added and things were divided into boxes as they are now. To make them work I used a mixture of grids and flexboxes, I need to review them to make sure my understanding of them is complete.</p>
+                            <hr>
+                            <p><span class="highlight">24-02-2026:</span> Color scheme finalized → The final color scheme was finally chosen with the main color being #4a5200. It took me way too long to find colors that satisfied me for both the font and background. The final noise image for the page background was decided.</p>
+                            <hr>
+                            <p><span class="highlight">21-02-2026:</span> First website version → The first version was uploaded to neocities, everything was in one page and there was no sidebar. Old color scheme was used, still green but more dead.</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script>
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return decodeURIComponent(parts.pop().split(';').shift());
+    }
+
+    function setCookie(name, value, days) {
+      const expires = new Date(Date.now() + days * 864e5).toUTCString();
+      document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`;
+    }
+
+    function applyLayout(layout) {
+      if (window.innerWidth <= 700) layout = 'wide';
+      document.body.classList.remove('layout_compact', 'layout_wide');
+      document.body.classList.add('layout_' + layout);
+      const btn = document.getElementById('layout_toggle');
+      btn.textContent = layout === 'wide' ? '⇄ Switch to Compact Layout' : '⇄ Switch to Wide Layout';
+    }
+
+    function toggleLayout() {
+      const current = document.body.classList.contains('layout_wide') ? 'wide' : 'compact';
+      const next = current === 'wide' ? 'compact' : 'wide';
+      setCookie('layout_pref', next, 365);
+      applyLayout(next);
+    }
+
+    (function init() {
+      document.cookie = "layout=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      const params = new URLSearchParams(window.location.search);
+      const urlLayout = params.get('layout');
+      const cookieLayout = getCookie('layout_pref');
+      const layout = urlLayout || cookieLayout || 'compact';
+      if (urlLayout) setCookie('layout_pref', urlLayout, 365);
+      applyLayout(layout);
+    })();
+  </script>
+</body>
+</html>
